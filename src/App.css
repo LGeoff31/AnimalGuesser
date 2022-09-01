@@ -1,38 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
+* {
+  font-family: "Old Standard TT", serif;
+}
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-fluid {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: #fff;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.background {
+  background: linear-gradient(132deg, #fc415a, #591bc5, #212335);
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding: 0;
+  margin: 0px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #d7d4e4;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
 }
-
-@keyframes App-logo-spin {
+.cube:nth-child(2n) {
+  border-color: #fff;
+}
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
+/* */
+/* Animate Background*/
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cube {
   from {
-    transform: rotate(0deg);
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
   }
   to {
-    transform: rotate(360deg);
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
   }
+}
+.title {
+  padding-top: 50px;
+  margin: 0;
+}
+
+.startButton {
+  font-size: 15px;
+  color: white;
+  display: inline-block;
+  background-color: green;
+  border-radius: 20%;
+  border: 4px double #cccccc;
+  cursor: pointer;
+}
+button:hover {
+  background-color: blue;
+}
+.introText {
+  font-weight: bold;
+}
+.animalQuestion {
+  margin-top: 40px;
+  height: 30%;
+  width: 30%;
+}
+.questionImage {
+  aspect-ratio: 1/1;
+  width: 20vw;
+  /* margin: 0 auto; */
+  /* height: 30vh; */
+  /* width: 30vh; */
+
+  /* padding: 2.5%; */
+}
+.soundButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* top: -5vh;
+  left: 28vh; */
+  height: 8vh;
+  width: 8vh;
+  border-radius: 50%;
+  border: 1px solid red;
+  background: green;
+}
+
+.rowAlign {
+  position: relative;
+  display: inline;
+}
+
+.options {
+  margin: 0 auto;
+  display: block;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  margin-top: 30px;
+  /* width: 20vh; */
+  /* height: 7vh; */
+}
+
+.green {
+  background: green;
+}
+.red {
+  background: red;
+}
+
+/* <!-- HTML !-->
+<button class="button-20" role="button">Button 20</button> */
+
+/* CSS */
+.choice {
+  margin: auto;
+  appearance: button;
+  /* background-color: #4d4ae8; */
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+  border: 1px solid #4d4ae8;
+  border-radius: 1rem;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
+    rgba(46, 54, 80, 0.075) 0 1px 1px;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Inter, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0.5rem;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  text-transform: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-20:focus:not(:focus-visible),
+.button-20:focus {
+  outline: 0;
+}
+
+.button-20:hover {
+  background-color: #3733e5;
+  border-color: #3733e5;
+}
+
+.button-20:focus {
+  background-color: #413fc5;
+  border-color: #3e3bba;
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,
+    rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
+}
+
+.button-20:active {
+  background-color: #3e3bba;
+  background-image: none;
+  border-color: #3a38ae;
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
+}
+
+.button-20:active:focus {
+  box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset,
+    rgba(104, 101, 235, 0.5) 0 0 0 0.2rem;
+}
+
+.button-20:disabled {
+  background-image: none;
+  box-shadow: none;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.next {
+  background-color: #4d4ae8;
+  font-weight: bolder;
+}
+
+.endImage {
+  height: 300px;
 }
