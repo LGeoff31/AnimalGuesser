@@ -303,6 +303,8 @@ const App = () => {
             );
           case pages.CONCLUDING:
             return <ConcludingPage correctAnswers={correctAnswers} />;
+          default:
+            return <ConcludingPage correctAnswers={correctAnswers} />;
         }
       })()}
     </div>

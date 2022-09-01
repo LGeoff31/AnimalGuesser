@@ -1,5 +1,4 @@
 import AnimalQuestion from "../GuessAnimalPicture.png";
-import pigSounds from "../animalSounds/pig.wav";
 const IntroPage = (props) => {
   const nextPage = props.nextPage;
   //   var birdChirp = new Audio(BirdChirp);
