@@ -54,7 +54,8 @@ const App = () => {
     console.log("Reached here");
   };
 
-  const onWin = () => {
+  const onWin = (currentChoiceChosen) => {
+    if (currentChoiceChosen) return;
     setChoiceChoosen(true);
     correctSound.play();
     setCorrectAnswers((previousNum) => {
