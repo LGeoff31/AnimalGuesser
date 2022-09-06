@@ -2,7 +2,9 @@ import monkeySounds from "../animalSounds/monkey.wav";
 import questionMark from "../questionMark.png";
 import monkey from "../animalPictures/monkey.jpeg";
 import { useEffect, useState } from "react";
+import ProgressBar from "./progress.js";
 const Level12 = (props) => {
+  const completed = Number((12 / 18) * 100).toFixed(0);
   const onWin = props.onWin;
   const onLose = props.onLose;
   const choiceChoosen = props.choiceChoosen;
@@ -28,6 +30,9 @@ const Level12 = (props) => {
   return (
     <div className="container-fluid">
       <div className="background">
+        <div className="top-padding">
+          <ProgressBar completed={completed} />
+        </div>
         <h1 className="title">Guess that Animal</h1>
         <div className="introText">
           <p>Turn you volume on! 🔊</p>

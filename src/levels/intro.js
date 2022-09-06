@@ -1,10 +1,6 @@
 import AnimalQuestion from "../GuessAnimalPicture.png";
 const IntroPage = (props) => {
   const nextPage = props.nextPage;
-  //   var birdChirp = new Audio(BirdChirp);
-  //   const playChirp = () => {
-  //     birdChirp();
-  //   };
   return (
     <div className="container-fluid">
       <div className="background">

@@ -22,6 +22,7 @@ import Level16 from "./levels/level16";
 import Level17 from "./levels/level17";
 import Level18 from "./levels/level18";
 import ConcludingPage from "./levels/conclusion.js";
+
 const App = () => {
   var correctSound = new Audio(correct);
   var incorrectSound = new Audio(wrong);
@@ -50,9 +51,6 @@ const App = () => {
   };
   const [choiceChoosen, setChoiceChoosen] = useState(false);
   const [currentPage, setCurrentPage] = useState(pages.INTRO);
-  const bugCheck = () => {
-    console.log("Reached here");
-  };
 
   const onWin = () => {
     setChoiceChoosen(true);
@@ -137,16 +135,17 @@ const App = () => {
       {(() => {
         switch (currentPage) {
           case pages.INTRO:
-            bugCheck();
             return <IntroPage nextPage={nextPage} />;
           case pages.LEVEL1:
             return (
-              <Level1
-                onWin={onWin}
-                onLose={onLose}
-                choiceChoosen={choiceChoosen}
-                nextPage={nextPage}
-              />
+              <div>
+                <Level1
+                  onWin={onWin}
+                  onLose={onLose}
+                  choiceChoosen={choiceChoosen}
+                  nextPage={nextPage}
+                />
+              </div>
             );
           case pages.LEVEL2:
             return (
