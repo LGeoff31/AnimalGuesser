@@ -56,7 +56,7 @@ const Level9 = (props) => {
           </button>
           <button
             className={choiceChoosen ? "choice green" : "choice"}
-            onClick={onWin}
+            onClick={() => onWin(choiceChoosen)}
           >
             Donkey
           </button>

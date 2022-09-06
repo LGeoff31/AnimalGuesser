@@ -52,7 +52,8 @@ const App = () => {
   const [choiceChoosen, setChoiceChoosen] = useState(false);
   const [currentPage, setCurrentPage] = useState(pages.INTRO);
 
-  const onWin = () => {
+  const onWin = (currentChoiceChosen) => {
+    if (currentChoiceChosen) return;
     setChoiceChoosen(true);
     correctSound.play();
     setCorrectAnswers((previousNum) => {

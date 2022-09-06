@@ -63,7 +63,7 @@ const Level6 = (props) => {
           </button>
           <button
             className={choiceChoosen ? "choice green" : "choice"}
-            onClick={onWin}
+            onClick={() => onWin(choiceChoosen)}
           >
             Cat
           </button>
