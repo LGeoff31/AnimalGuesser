@@ -47,7 +47,6 @@ const Level9 = (props) => {
             alt=""
           />
         </div>
-
         <div className="options">
           <button
             onClick={onLose}
@@ -79,7 +78,6 @@ const Level9 = (props) => {
             </button>
           ) : null}
         </div>
-
         <div className="cube"></div>
         <div className="cube"></div>
         <div className="cube"></div>
